@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070b18">
+  <title>Solar System Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Solar System Explorer home">
+        <span class="brand-mark">✦</span>
+        <span><strong>ORBITAL</strong><small>SOLAR SYSTEM EXPLORER</small></span>
+      </a>
+      <div class="top-status"><span class="live-dot"></span> LIVE SIMULATION <span class="status-divider">|</span> HELIOCENTRIC VIEW</div>
+      <button class="icon-button" id="resetView" title="Reset view" aria-label="Reset view">↺</button>
+    </header>
+
+    <main class="main-layout">
+      <section class="visual-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">EXPLORE OUR NEIGHBORHOOD</p>
+            <h1>The Solar System</h1>
+            <p class="subtitle">A little perspective on our place in the universe.</p>
+          </div>
+          <div class="scale-note"><span class="scale-icon">◎</span> ORBITAL VIEW <span class="scale-separator">/</span> NOT TO SCALE</div>
+        </div>
+
+        <div class="space-card">
+          <canvas id="spaceCanvas" aria-label="Animated solar system. Select a planet or the Sun to see details."></canvas>
+          <div class="canvas-vignette"></div>
+          <div class="canvas-hint"><span class="mouse-icon">⌖</span> SELECT A CELESTIAL BODY</div>
+          <div class="canvas-controls">
+            <button id="togglePlay" class="control-button"><span id="playIcon">Ⅱ</span> <span id="playText">PAUSE</span></button>
+            <div class="speed-control">
+              <label for="speedRange">ORBIT SPEED</label>
+              <input id="speedRange" type="range" min="0" max="4" step="0.25" value="1">
+              <span id="speedValue">1.00×</span>
+            </div>
+          </div>
+          <div class="zoom-label">☼ &nbsp; THE SUN AT THE CENTER</div>
+        </div>
+
+        <div class="planet-strip">
+          <div class="strip-heading"><span>CELESTIAL BODIES</span><span>SELECT TO INSPECT ↗</span></div>
+          <div id="planetButtons" class="planet-buttons"></div>
+        </div>
+      </section>
+
+      <aside class="details-panel">
+        <div class="panel-topline"><span>MISSION CONTROL</span><span class="panel-index">01 — 10</span></div>
+        <div id="detailsContent" aria-live="polite"></div>
+        <div class="panel-footer">
+          <span class="footer-star">✧</span>
+          <p>Keep looking up.<br><strong>There's always more to discover.</strong></p>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <span>ORBITAL EXPLORER <span class="footer-muted">· EDUCATIONAL SIMULATION</span></span>
+      <span>MADE FOR THE CURIOUS <span class="footer-muted">✦</span></span>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
